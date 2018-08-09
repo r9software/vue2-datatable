@@ -1,6 +1,6 @@
 <template>
     <div class="col-sm-6" style="white-space: nowrap">
-        {{query.limit}} records of {{total}} total records -
+        {{}} records of {{total}} total records -
         <label name="PageSizeSelect">
             <select class="form-control input-sm -page-size-select" v-model="query.limit"
                     @change="query.offset = 0 /* reset to the first page */">
@@ -17,7 +17,8 @@
             query: {type: Object, required: true},
             pageSizeOptions: {type: Array, required: true},
             total: 0,
-        }
+        },
+        currentTotal: this.query.limit * (this.query.offset === 0 ? 1 : this.query.offset),
     }
 </script>
 <style>
