@@ -23,6 +23,15 @@
                 currentTotal:0,
             }
         },
+        watch: {
+            query: {
+                handler(query) {
+                    var page = (query.offset / query.limit) + 1;
+                    this.currentTotal = page*limit;
+                },
+                deep: true
+            }
+        },
         created() {
             this.currentTotal= this.query.limit * (this.query.offset === 0 ? 1 : this.query.offset);
         }
