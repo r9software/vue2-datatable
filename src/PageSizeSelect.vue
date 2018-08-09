@@ -20,7 +20,7 @@
         },
         data() {
             return {
-                currentTotal:0;
+                currentTotal:0,
             }
         },
         created() {
