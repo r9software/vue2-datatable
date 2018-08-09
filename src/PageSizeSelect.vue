@@ -20,20 +20,18 @@
         },
         data() {
             return {
-                currentTotal:0,
+                currentTotal:this.query.limit * (this.query.offset === 0 ? 1 : this.query.offset),
             }
         },
         watch: {
-            query: {
-                handler(query) {
-                    var page = (query.offset / query.limit) + 1;
-                    this.currentTotal = page*limit;
+            currentTotal: {
+                handler(currentTotal) {
+                   console.log(currentTotal);
                 },
                 deep: true
             }
         },
         created() {
-            this.currentTotal= this.query.limit * (this.query.offset === 0 ? 1 : this.query.offset);
         }
     }
 </script>
