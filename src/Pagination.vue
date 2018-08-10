@@ -61,8 +61,11 @@ export default {
       this.query.offset = (n - 1) * +this.query.limit
     },
     turnPage (i) {
-      if (i < 0 && this.isFirstPage || i > 0 && this.isLastPage) return
-      this.query.offset = +this.query.offset + i * +this.query.limit
+      if (i < 0 && this.isFirstPage || i > 0 && this.isLastPage) {
+          this.query.offset = +this.query.offset + i * +this.query.limit;
+          Bus.$emit("page:changed",this.query.offset);
+          return this.query.offset;
+      }
     }
   }
 }

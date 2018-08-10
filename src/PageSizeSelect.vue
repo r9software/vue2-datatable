@@ -20,18 +20,13 @@
         },
         data() {
             return {
-                currentTotal:this.query.limit * (this.query.offset === 0 ? 1 : this.query.offset),
-            }
-        },
-        watch: {
-            currentTotal: {
-                handler(currentTotal) {
-                   console.log(currentTotal);
-                },
-                deep: true
+                currentTotal: this.query.limit * (this.query.offset === 0 ? 1 : this.query.offset),
             }
         },
         created() {
+            Bus.$on("page:changed", page => {
+                this.currentTotal = this.query.limit * page;
+            });
         }
     }
 </script>
