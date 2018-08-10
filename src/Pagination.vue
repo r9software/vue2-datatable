@@ -1,9 +1,9 @@
 <template>
     <div class="row" style="width:  100% !important;">
-
         <div class="col-sm-6" style="white-space: nowrap">
-            {{this.query.limit * page}}
+           <span style="margin-left:  20px;">{{this.query.limit * page}}
             <page-size-select :query="query" :total="total" :page-size-options="pageSizeOptions"/>
+           </span>
         </div>
         <div class="col-sm-6 pull-right">
             <ul class="pull-right pagination" style="margin: 0" name="Pagination">

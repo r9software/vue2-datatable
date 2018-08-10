@@ -1,6 +1,5 @@
 <template>
-    <div>
-        records of {{total}} total records -
+    <span>records of {{total}} total records -
         <label name="PageSizeSelect">
             <select class="form-control input-sm -page-size-select" v-model="query.limit"
                     @change="query.offset = 0 /* reset to the first page */">
@@ -8,7 +7,7 @@
             </select>
             {{ $i18nForDatatable('items / page') }}
         </label>
-    </div>
+    </span>
 </template>
 <script>
     export default {
