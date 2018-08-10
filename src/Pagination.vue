@@ -81,6 +81,7 @@
             turnPage(i) {
                 if (i < 0 && this.isFirstPage || i > 0 && this.isLastPage) {
                     this.query.offset = +this.query.offset + i * +this.query.limit;
+                    this.page=this.page+i;
                     return this.query.offset;
                 }
             }

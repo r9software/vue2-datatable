@@ -18,7 +18,7 @@
             query: {type: Object, required: true},
             pageSizeOptions: {type: Array, required: true},
             total: 0,
-            currentPage:0,
+            currentPage:1,
         },
 
         created() {
