@@ -5,7 +5,6 @@ Datatable.install = (Vue, options) => {
   
   // this might be the simplest i18n solution
   Vue.prototype.$i18nForDatatable = srcTxt => locale[srcTxt] || srcTxt
-    window.Bus = new Vue();
   Vue.component('Datatable', Datatable)
 }
 

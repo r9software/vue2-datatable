@@ -1,6 +1,7 @@
 <template>
-    <div class="col-sm-6" style="white-space: nowrap">
-        {{currentTotal}} records of {{total}} total records -
+
+        <div class="col-sm-6" style="white-space: nowrap">
+        {{this.query.limit * currentPage}} records of {{total}} total records -
         <label name="PageSizeSelect">
             <select class="form-control input-sm -page-size-select" v-model="query.limit"
                     @change="query.offset = 0 /* reset to the first page */">
@@ -8,7 +9,7 @@
             </select>
             {{ $i18nForDatatable('items / page') }}
         </label>
-    </div>
+        </div>
 </template>
 <script>
     export default {
@@ -17,16 +18,11 @@
             query: {type: Object, required: true},
             pageSizeOptions: {type: Array, required: true},
             total: 0,
+            currentPage:0,
         },
-        data() {
-            return {
-                currentTotal: this.query.limit * (this.query.offset === 0 ? 1 : this.query.offset),
-            }
-        },
+
         created() {
-            Bus.$on("page:changed", page => {
-                this.currentTotal = this.query.limit * page;
-            });
+
         }
     }
 </script>

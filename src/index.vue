@@ -10,10 +10,7 @@
         <tbl v-bind="$props"/>
 
         <div v-if="Pagination" class="row" style="margin-top: 10px">
-            <page-size-select :query="query" :total="total" :page-size-options="pageSizeOptions"/>
-            <div class="col-sm-6">
-                <pagination class="pull-right" :total="total" :query="query"/>
-            </div>
+            <pagination :total="total" :query="query" :page-size-options="pageSizeOptions"/>
         </div>
     </div>
 </template>
