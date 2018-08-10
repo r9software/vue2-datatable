@@ -1,6 +1,10 @@
 <template>
     <div class="row" style="width:  100% !important;">
-        <page-size-select :query="query" :total="total" :current-page="page" :page-size-options="pageSizeOptions"/>
+
+        <div class="col-sm-6" style="white-space: nowrap">
+            {{this.query.limit * page}}
+            <page-size-select :query="query" :total="total" :page-size-options="pageSizeOptions"/>
+        </div>
         <div class="col-sm-6 pull-right">
             <ul class="pull-right pagination" style="margin: 0" name="Pagination">
                 <li v-if="!isFirstPage" class="page-item" @click="turnPage(-1)">
@@ -53,7 +57,7 @@
                 return Math.ceil(this.total / +this.query.limit)
             },
             curPage() {
-                this.page=Math.ceil(+this.query.offset / +this.query.limit) + 1;
+                this.page = Math.ceil(+this.query.offset / +this.query.limit) + 1;
                 return this.page;
             },
             dspBtns() {
@@ -81,7 +85,7 @@
             turnPage(i) {
                 if (i < 0 && this.isFirstPage || i > 0 && this.isLastPage) {
                     this.query.offset = +this.query.offset + i * +this.query.limit;
-                    this.page=this.page+i;
+                    this.page = this.page + i;
                     return this.query.offset;
                 }
             }

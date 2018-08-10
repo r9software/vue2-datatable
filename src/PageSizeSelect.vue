@@ -1,7 +1,6 @@
 <template>
-
-        <div class="col-sm-6" style="white-space: nowrap">
-        {{this.query.limit * currentPage}} records of {{total}} total records -
+    <div>
+        records of {{total}} total records -
         <label name="PageSizeSelect">
             <select class="form-control input-sm -page-size-select" v-model="query.limit"
                     @change="query.offset = 0 /* reset to the first page */">
@@ -9,7 +8,7 @@
             </select>
             {{ $i18nForDatatable('items / page') }}
         </label>
-        </div>
+    </div>
 </template>
 <script>
     export default {
@@ -17,8 +16,7 @@
         props: {
             query: {type: Object, required: true},
             pageSizeOptions: {type: Array, required: true},
-            total: {type: Number, required: true},
-            currentPage: {type: Number, required: true},
+            total: {type: Number, required: true}
         },
         created() {
         }
