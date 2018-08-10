@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="row">
         <page-size-select :query="query" :total="total" :current-page="page" :page-size-options="pageSizeOptions"/>
         <div class="col-sm-6 pull-right">
             <ul class="pagination" style="margin: 0" name="Pagination">
@@ -26,8 +26,12 @@
     </div>
 </template>
 <script>
+    import PageSizeSelect from './PageSizeSelect.vue'
+
     export default {
         name: 'Pagination',
+
+        components: {PageSizeSelect},
         props: {
             pageSizeOptions: {type: Array, required: true},
             total: {type: Number, required: true},

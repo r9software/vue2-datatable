@@ -18,7 +18,6 @@
     import HeaderSettings from './HeaderSettings/index.vue'
     import Tbl from './Table/index.vue'
     import Pagination from './Pagination.vue'
-    import PageSizeSelect from './PageSizeSelect.vue'
     import props from './_mixins/props'
 
     export default {
