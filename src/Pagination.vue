@@ -1,8 +1,8 @@
 <template>
-    <div class="row">
+    <div class="row" style="width:  100% !important;">
         <page-size-select :query="query" :total="total" :current-page="page" :page-size-options="pageSizeOptions"/>
         <div class="col-sm-6 pull-right">
-            <ul class="pagination" style="margin: 0" name="Pagination">
+            <ul class="pull-right pagination" style="margin: 0" name="Pagination">
                 <li v-if="!isFirstPage" class="page-item" @click="turnPage(-1)">
                     <a href="#" class="page-link" @click.prevent>
                         <i class="fa fa-arrow-left"></i>
