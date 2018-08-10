@@ -26,7 +26,7 @@
         components: {HeaderSettings, Tbl, Pagination},
         created() {
             // init query (make all the properties observable by using `$set`)
-            const q = {limit: 10, offset: 0, sort: '', order: '', ...this.query}
+            const q = {limit: 20, offset: 0, sort: '', order: '', ...this.query}
             Object.keys(q).forEach(key => {
                 this.$set(this.query, key, q[key])
             })
