@@ -17,12 +17,10 @@
         props: {
             query: {type: Object, required: true},
             pageSizeOptions: {type: Array, required: true},
-            total: 0,
-            currentPage:1,
+            total: {type: Number, required: true},
+            currentPage: {type: Number, required: true},
         },
-
         created() {
-
         }
     }
 </script>
