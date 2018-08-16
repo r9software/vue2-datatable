@@ -1,7 +1,7 @@
 <template>
     <div class="row" style="width:  100% !important;">
         <div class="col-sm-6" style="white-space: nowrap">
-           <span style="margin-left:  20px;">{{this.query.limit * page}}
+           <span style="margin-left:  20px;">{{total>=(this.query.limit * page)?this.query.limit * page:total}}
             <page-size-select :query="query" :total="total" :page-size-options="pageSizeOptions"/>
            </span>
         </div>
